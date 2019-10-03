@@ -72,6 +72,7 @@ endif
 OBJECTS :=
 
 OBJECTS += $(OBJDIR)/BFi.o
+OBJECTS += $(OBJDIR)/Interpreter.o
 OBJECTS += $(OBJDIR)/SourceLexer.o
 
 # Rules
@@ -135,6 +136,9 @@ endif
 # #############################################
 
 $(OBJDIR)/BFi.o: src/BFi.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/Interpreter.o: src/Interpreter.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/SourceLexer.o: src/SourceLexer.cpp

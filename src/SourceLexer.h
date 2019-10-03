@@ -15,10 +15,11 @@ enum Tokens {
 
 
 class Lexer {
+    unsigned int current_line;
     unsigned int tn;
     char* text;
 public:
     Lexer(const char* filename);
     ~Lexer() { if(text) delete[] text; }
-    char step() {}
+    char step();
 };
