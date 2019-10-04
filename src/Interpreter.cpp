@@ -41,7 +41,8 @@ void Interpreter::Run() {
                 if (mem_ptr != MAX_MEM - 1)
                     mem_ptr++;
                 else {
-                    std::cout << "Error! Tried to access past the end of memory, abort. (Memory size = " << MAX_MEM << ")\n";
+                    std::cout << "Error! Tried to access past the end of memory at line: " << current_line << " with the instruction: \"" << cur_tok << "\". Abort. (Memory size = " << MAX_MEM << ")\n";
+                    this->~Interpreter();
                     exit(EXIT_FAILURE);
                 }
                 break;
@@ -50,7 +51,8 @@ void Interpreter::Run() {
                 if (mem_ptr != 0)
                     mem_ptr--;
                 else {
-                    std::cout << "Error! Tried to access unexisting memory, abort. (Memory size = " << MAX_MEM << ")\n";
+                    std::cout << "Error! Tried to access cell (-1) at line: " << current_line << " with the instruction: \"" << cur_tok << "\". Abort.\n";
+                    this->~Interpreter();
                     exit(EXIT_FAILURE);
                 }
                 break;
