@@ -26,9 +26,7 @@ workspace "Brainfuck-Interpreter"
     }
 
     filter "configurations:Debug"
-      defines "HZ_DEBUG"
       symbols "On"
 
     filter "configurations:Release"
-      defines "HZ_RELEASE"
       optimize "On"
