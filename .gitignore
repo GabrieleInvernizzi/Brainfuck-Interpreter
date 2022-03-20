@@ -1,5 +1,5 @@
 bin/*
 bin-int/*
 Makefile
-BGi.make
+BFi.make
 gp.sh
