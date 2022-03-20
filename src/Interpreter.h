@@ -4,19 +4,6 @@
 
 #define MAX_MEM 65536
 
-// token types and corresponding values (Luckly there are few)
-enum Tokens {
-    Increment = '+',
-    Decrement = '-',
-    RShift = '>',
-    LShift = '<',
-    Out = '.',
-    In = ',',
-    OpenLoop = '[',
-    CloseLoop = ']',
-    NewLine = '\n'
-};
-
 
 class Interpreter {
     unsigned int current_line;
@@ -26,8 +13,9 @@ class Interpreter {
     char memory[MAX_MEM];
     unsigned int mem_ptr;
 public:
-    Interpreter(const char* filename);
+    Interpreter();
     ~Interpreter() { if (text) delete[] text; }
 
-    void Run();
+    int LoadProgram(const char* filename);
+    int Run();
 };
