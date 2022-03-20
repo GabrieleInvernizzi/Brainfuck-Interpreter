@@ -6,7 +6,7 @@ workspace "Brainfuck-Interpreter"
     "Release"
   }
 
-  project "BGi"
+  project "BFi"
     kind "ConsoleApp"
     language "C++"
     cppdialect "C++17"

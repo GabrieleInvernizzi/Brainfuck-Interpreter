@@ -24,7 +24,7 @@ Interpreter::Interpreter()
 int Interpreter::LoadProgram(const char *filename)
 {
     std::ifstream source(filename, std::ios::in | std::ios::binary | std::ios::ate);
-    if (source.is_open()) return -1;
+    if (!source.is_open()) return -1;
     size = source.tellg();
     if (size == -1) return -1;
     text = new char[size];
