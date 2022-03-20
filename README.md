@@ -1,5 +1,5 @@
 # Brainfuck-Interpreter
-A simple Brainfuck language interpreter in c++.
+A simple [Brainfuck language](https://esolangs.org/wiki/Brainfuck) interpreter in c++.
 
 
 ## Build instructions
