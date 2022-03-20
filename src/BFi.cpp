@@ -3,11 +3,9 @@
 
 
 int main(int argc, char const *argv[]) {
-    if (argc < 2) {
-        std::cout << "Too few arguments! Usage: BGi <filename>";
-        return EXIT_FAILURE;
-    } else if (argc > 2) {
-        std::cout << "Too many arguments! Usage: BGi <filename>";
+    if (argc != 2) {
+        std::cerr << "Wrong number of arguments! Expected \"1\", found \"" 
+                  << (argc - 1) << "\"\nUsage: BGi <filename>" << std::endl;
         return EXIT_FAILURE;
     }
 
